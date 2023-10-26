@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+ <head>
+	
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+	<link rel="stylesheet" type="text/css" href="/assets_ongiasp/reset.css">
+	<link rel="stylesheet" type="text/css" href="/assets_ongiasp/style.css">
+
+	<title>Cadastro ONG</title>
+ 
+ </head>
+
+<body>
+    
+<main class="main_content container">
+        
+    <section class="section-seu-codigo container">
+        
+        <div class="content">
+                        
+            <div class="box-artigo">
+
+                <div class="row input-container">
+                    <h1 class="title_contato">Formulário de Cadastro</h1>
+                    
+                    <form th:action="@{/iasp/usuario/add-usuario}" th:object="${usuarioDesastre}" method="post">
+
+                        <div class="style-form-input full">
+                            <input type="text"  th:field="*{nome}" required />
+                            <label>Nome</label> 
+                        </div>
+
+                        <div class="style-form-input">
+                            <input type="text" th:field="*{email}" required />
+                            <label>E-mail</label> 
+                        </div>
+
+                        <div class="style-form-input right">
+                            <input type="text" th:field="*{cpf}" required />
+                            <label>CPF</label> 
+                        </div>
+
+                        <div class="style-form-input full">
+                            <input type="text" th:field="*{telefone}" required />
+                            <label>Telefone</label> 
+                        </div>
+
+                        <div class="style-form-input full">
+                            <input type="text"  th:field="*{senha}" required />
+                            <label> Senha</label> 
+                        </div>
+
+                        <div class="style-form-input full">
+                            <input type="text" name="confsenha" required />
+                            <label>Confirmar senha</label> 
+                        </div>
+                        
+                        <div class="style-form-input full">
+
+                            <input type="hidden" name="acao" value="enviar">
+                            <input type="submit" class="btn-submit">
+                        
+                        </div>
+                    </form>
+                </div>
+
+</body>
+</html>
